@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>JS osnove</title>
+</head>
+<body>
+ <script type="text/javascript">
+    function ispisi(polje){
+        for(let i = 0; i < polje.length; i++)
+            document.write(polje[i] + " ");
+        document.write("<br/>")
+    }
+    function sortiraj(polje){
+        for(let i = 0; i < polje.length - 1; i++)
+            for(let j = i + 1; j < polje.length; j++)
+                if(polje[i] < polje[j]){
+                    let pom = polje[i];
+                    polje[i] = polje[j];
+                    polje[j] = pom;
+                }
+    }
+
+    let polje = new Array(1,2,3,4,7,8,5,6,9,55,74,11,33);
+    document.write("Duljina polja = " + polje.length + "<br/>");
+    sortiraj(polje);
+    document.write("Sortirano od najveceg ka najmanjm: ");
+    ispisi(polje);
+    polje.reverse();
+    document.write("Sortirano od najmanjeg ka najvecem: ");
+    ispisi(polje);
+    polje.pop();
+    document.write("Bez zadnjeg clana: ");
+    ispisi(polje);
+    document.write("Dodani 19 i 22 na kraj: ");
+    polje.push(19, 22);
+    ispisi(polje);
+    let polje2 = new Array("Banana", "Apple", "Mango", "Orange");
+    let finalpolje = polje.concat(polje2);
+    document.write("Dodana lista sa vocem i spojena sa listom brojeva: ");
+    ispisi(finalpolje);
+ </script>
+</body>
+</html>
